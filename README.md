@@ -43,12 +43,6 @@ Install Epart:
     and then restarting the web server.  For example, on a Debian or Ubuntu
     system you would do the following using `sudo`:
 
-    > Copy `installation/rampdemo.conf` to `/etc/apache2/sites-available`.  
-      Edit the `rampdemo.conf` copy in the `sites-available` directory
-         to set an appropriate ServerAdmin, ServerName and DocumentRoot.  
-      Enable the site:  `a2ensite rampdemo`.  
-      Restart the apache server (e.g., `service apache2 reload`).  
-
     > Copy `installation/epart.conf` to `/etc/apache2/sites-available`.  
       Edit the `epart.conf` copy in the `sites-available` directory
         to set an appropriate ServerAdmin, ServerName and DocumentRoot.  
@@ -86,8 +80,8 @@ password:
         `custom_properties.ini`.  
       For example,
 
-        cat ramp_basics.ini ramp_defaults.ini >application.ini
-        cat epart_defaults.ini custom_properties.ini >>application.ini
+            cat ramp_basics.ini ramp_defaults.ini >application.ini
+            cat epart_defaults.ini custom_properties.ini >>application.ini
 
 1.  Include basic documentation and adminstrative table settings from Ramp:
 
@@ -100,7 +94,7 @@ password:
 
       For example, in the top-level directory (the one containing this
       `README.md` file) the following commands on a Unix/Linux/MacOS
-      system would create an appropriate symbolic links (assuming Ramp
+      system would create appropriate symbolic links (assuming Ramp
       is installed in ../ramp):
 
             ln -s ../ramp/README.md rampREADME.md
