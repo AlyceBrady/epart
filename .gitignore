@@ -1,0 +1,10 @@
+.[^z]?*
+!.gitignore
+!public/.htaccess
+*~
+installation/installDB/createMysqlAccts.sql
+configs/application.ini
+configs/custom_properties.ini
+rampREADME.md
+docs/rampDocs
+settings/Admin/rampAdmin

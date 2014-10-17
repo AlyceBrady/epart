@@ -1,0 +1,37 @@
+RECOMMENDATION:  Copy or link the ramp/adminSettings directory under the
+Smart settings directory, the ramp/docs directory under the docs
+directory, ...
+
+SMART needs to have an application.ini file in the configs directory,
+but one is not provided in the NjalaSmartPrototype repository.
+Instead, one should be built as part of the installation process.
+Several files that serve as the basic building blocks for an
+application.ini file are provided in the repository:
+    ramp_basics.ini     defines some very basic properties
+    ramp_defaults.ini   defines default values for properties common to
+                            most or all RAMP applications
+    smart_defaults.ini  defines default values for properties common to
+                            Smart environments for Njala University
+
+    template_custom_properties.ini  a template for customizing properties
+
+To create an application.ini file for the RAMP Demo application, make a
+copy of template_custom_properties.ini (called custom_properties.ini,
+for example).  Edit it to customize the username and password that
+SMART will use to access the database.  Customize any other
+properties as appropriate (you may need to copy them from ramp_basics,
+ramp_defaults, or smart_defaults first).
+
+Then build your application.ini from the following files:
+    ramp_basics.ini
+    ramp_defaults.ini
+    smart_defaults.ini
+    custom_properties.ini
+For example, on Unix/Linux/MacOS:
+    cat ramp_basics.ini ramp_defaults.ini  smart_defaults >application.ini
+    cat custom_properties.ini >>application.ini
+
+If you are using git and for security reasons you do not want to add and
+commit files with your database passwords, you may wish to add
+custom_properties.ini and application.ini to your .gitignore file.
+

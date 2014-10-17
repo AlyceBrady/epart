@@ -1,0 +1,95 @@
+EPART: Epidemic Patient and Resource Tracking
+    Built on top of RAMP - Record and Activity Management Program
+
+This directory contains instructions and sample files to help you create
+an Apache virtual host and to set up one or more databases to use
+with the Epart Prototype.
+
+The installDB directory contains a number of files that:
+  -- Create appropriate MySQL accounts (if they don't exist already).
+  -- Create basic tables used by the underlying RAMP framework for
+     such things as authentication, authorization, and record locking.
+  -- Create prototype Epart tables.
+
+You may use these files as guides for creating accounts interactively
+in MySQL, or you may edit them and then use them as scripts within MySQL:
+     mysql> SOURCE filename.sql
+
+    SECURITY CONCERNS:
+    Please read the installation instructions in INSTALL_DB.txt,
+    particularly the section on "Addressing Security Concerns,"
+    BEFORE using these files as guides or using them as scripts.
+    AT THE VERY LEAST, use different passwords than are specified
+    in the files that create MySQL accounts.  If you put new passwords
+    in a file to read as a script, change the permissions on the
+    file before-hand, to be readable only by the owner.
+
+## Creating an Apache virtual host ##
+
+The epart.conf file contains a sample VirtualHost definition
+for a virtual host named epart.nu.edu.sl.  Edit that file to give it
+the name you want, making sure that the DocumentRoot is also set
+correctly.  How you turn on a virtual host depends on your operating
+system; for example, on a Debian or Ubuntu server, you would do the
+following (using sudo for all three steps):
+
+    Copy epart.conf to /etc/apache2/sites-available.
+    Enable the site:  a2ensite epart.
+    Restart the apache server (e.g., service apache2 reload).
+
+On some other systems, such as MacOS, you would copy the virtual host
+definition from epart.conf into a system-wide virtual host
+configuration file (e.g., /etc/apache2/extra/httpd-vhosts.conf).
+
+## Creating Epart Environment databases ##
+
+The rest of this file contains instructions for creating an Epart Demo
+or development environment (a sample environment whose data you can
+view and change).
+
+
+### CREATING A DEVELOPMENT ENVIRONMENT:  (epart_demo database) ###
+
+createEPARTMysqlAccts.sql
+    Working with Epart requires two types of Mysql Accounts:  database
+    administrator accounts (one for each DBA) and a single account that is
+    used by the web-based EPART software.  The createEPARTMysqlAccts.sql
+    file has commands that create both and grant them appropriate
+    permissions on the epart_demo database.  If you already have
+    appropriate database administrator accounts (or an existing account
+    for Epart to use), you can comment out the appropriate commands.
+    In that case, make sure you edit the GRANT commands to use your
+    existing accounts.
+
+    You must run MySQL as root (or some other user that has CREATE USER
+    and GRANT permissions to execute the commands found in this file.
+
+    ==> Instructions:
+        Copy createEPARTMysqlAccts.sql to a file readable only to you
+            (e.g., copy it to createMysqlAccts.sql and change the
+            permissions of that file).
+        Edit the file to create appropriate account names and passwords,
+            or comment out the CREATE USER commands if you have existing
+            accounts.  In either case, update the GRANT commands to
+            refer to the appropriate account names.
+        Run MySQL as root to execute the commands, e.g.,
+            mysql> SOURCE createMysqlAccts.sql
+
+installDB/setupEpartDB.sql
+    This file calls most of the other files in the installDB directory.
+    They clear out the contents of the epart_demo database (if a previous
+    version existed), and create appropriate tables.
+
+    ==> Instructions:
+        Change to the installDB directory (e.g., cd installDB).
+        Run MySQL as root or as a DBA and run the setupEpartDB.sql
+        script:
+            mysql> SOURCE setupEpartDB.sql
+
+In order for EPART to use the MySQL account you have set up for it and
+access the database, you will need to specify the account username,
+password, and database in an application.ini file in the configs
+directory.
+
+==> See the README file in the configs directory for more information.
+

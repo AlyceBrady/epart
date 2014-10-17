@@ -1,0 +1,95 @@
+; Initial EPART Activities for Patient and Resource Tracking
+
+activityListHeading = "Choose a file or activity:"
+
+activity[] = "Core Heading"
+activity[] = "Person Table"
+activity[] = "Village Table"
+activity[] = "VV Code Tables"
+activity[] = "Core FutureWork"
+activity[] = horizRule
+activity[] = "Resource Tracking Heading"
+activity[] = "Health Care Facilities"
+activity[] = "Health Care Workers"
+activity[] = "Health Care Worker Assignments"
+; activity[] = "Supplies Table"
+; activity[] = horizRule
+; activity[] = "Procedures Heading"
+
+
+[horizRule]
+
+type = "separator"
+
+[Core Heading]
+
+type = "comment"
+comment = "### Core Tables ###"
+
+[Person Table]
+
+type = "setting"
+source = "EPART/Person"
+title = "Person File"
+description = "Person records
+(should be logged in as _authOfficial_)"
+inactive = true
+
+[Village Table]
+
+type = "setting"
+source = "EPART/Village"
+title = "Village File"
+description = "Location information for villages or city neighborhoods"
+
+[VV Code Tables]
+
+type = "activityList"
+source = "EPART/ValidCodeTables/index.act"
+title = "Valid Code Tables"
+description = "View or modify tables of valid code values"
+
+[Core FutureWork]
+
+type = "comment"
+comment = "Core area might also include other tables, such as
+additional tables enumerating valid values for various fields."
+
+[Resource Tracking Heading]
+
+type = "comment"
+comment = "### Resource Tracking ###"
+
+[Health Care Facilities]
+
+type = "setting"
+source = "EPART/Resources/HealthFacilities"
+title = "Health Care Facilities"
+description = "Names and address of health care facilities"
+
+[Health Care Workers]
+
+type = "setting"
+source = "EPART/Resources/HCWorkers"
+title = "Health Care Workers"
+description = "View or modify table of health care workers"
+
+[Health Care Worker Assignments]
+
+type = "setting"
+source = "EPART/Resources/HCWorkerAssignments"
+title = "Facility Employees"
+description = "Table associating facilities and health care workers"
+
+[Supplies Table]
+
+type = "setting"
+source = "EPART/Resources/Supplies"
+title = "Supplies"
+description = "Supply records"
+
+[Procedures Heading]
+
+type = "comment"
+comment = "### Procedure Example(s) ###"
+

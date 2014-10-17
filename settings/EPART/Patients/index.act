@@ -1,0 +1,85 @@
+; Initial EPART Activities for Patient data entry or updating
+
+activityListHeading = "Choose a file or activity:"
+
+activity[] = "Core Heading"
+; activity[] = "Person Table"
+activity[] = "Village Table"
+activity[] = "VV Code Tables"
+activity[] = "Core FutureWork"
+activity[] = horizRule
+activity[] = "Patient Tracking Heading"
+activity[] = "Patient Ebola Tracking"
+activity[] = "Additional Patient Annotations"
+activity[] = "Patient Tracking FutureWork"
+; activity[] = horizRule
+; activity[] = "Procedures Heading"
+
+
+[horizRule]
+
+type = "separator"
+
+[Core Heading]
+
+type = "comment"
+comment = "### Core Tables ###"
+
+[Person Table]
+
+type = "setting"
+source = "EPART/Person"
+title = "Person File"
+description = "Person records
+(should be logged in as _authOfficial_)"
+inactive = true
+
+[Village Table]
+
+type = "setting"
+source = "EPART/Village"
+title = "Village File"
+description = "Location information for villages or city neighborhoods"
+
+[VV Code Tables]
+
+type = "activityList"
+source = "EPART/ValidCodeTables/index.act"
+title = "Valid Code Tables"
+description = "View or modify tables of valid code values"
+
+[Core FutureWork]
+
+type = "comment"
+comment = "Core area might also include other tables, such as
+additional tables enumerating valid values for various fields."
+
+[Patient Tracking Heading]
+
+type = "comment"
+comment = "### Patient Tracking ###"
+
+[Patient Ebola Tracking]
+
+type = "setting"
+source = "EPART/Patients/HealthHistory"
+title = "Patient Ebola Tracking"
+description = "Health Status Tracking for affected individuals"
+
+[Additional Patient Annotations]
+
+type = "setting"
+source = "EPART/Patients/PatientAnnotations"
+title = "Additional Patient Notes"
+description = "Additional notes about individual patients"
+
+[Patient Tracking FutureWork]
+
+type = "comment"
+comment = "The Patients area might also include other tables?"
+
+[Procedures Heading]
+
+type = "comment"
+comment = "### Procedure Example(s) ###"
+

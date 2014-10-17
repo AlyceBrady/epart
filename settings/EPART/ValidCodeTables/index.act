@@ -1,0 +1,81 @@
+; Smart Activities related to Valid Value Tables
+
+activityListHeading = "Choose a table:"
+
+activity[] = "Resource VV Heading"
+activity[] = "Facility Status Values Table"
+activity[] = "Facility Types Table"
+activity[] = "Health Care Worker Roles Table"
+
+activity[] = horizRule
+
+activity[] = "Patient VV Heading"
+activity[] = "Annotation Types Table"
+activity[] = "Authorization Types Table"
+activity[] = "Diagnosis Status Values Table"
+activity[] = "Health Status Values Table"
+
+
+[horizRule]
+
+type = "separator"
+
+[Resource VV Heading]
+
+type = "comment"
+comment = "### Resource-Related Valid Value Code Tables ###"
+
+[ "Facility Status Values Table" ]
+
+type = "setting"
+source = "EPART/ValidCodeTables/FacilityStatus"
+title = "Facility Status Values"
+description = "View or modify list of Facility Status Values"
+
+[ "Facility Types Table" ]
+
+type = "setting"
+source = "EPART/ValidCodeTables/FacilityTypes"
+title = "Facility Types"
+description = "View or modify list of Facility Types"
+
+[ "Health Care Worker Roles Table" ]
+
+type = "setting"
+source = "EPART/ValidCodeTables/HCWorkerRoles"
+title = "Health Care Worker Roles"
+description = "View or modify list of Health Care Worker Roles"
+
+[Patient VV Heading]
+
+type = "comment"
+comment = "### Patient-Related Valid Value Code Tables ###"
+
+[ "Annotation Types Table" ]
+
+type = "setting"
+source = "EPART/ValidCodeTables/AnnotationTypes"
+title = "Annotation Types"
+description = "View or modify list of Annotation Types"
+
+[ "Authorization Types Table" ]
+
+type = "setting"
+source = "EPART/ValidCodeTables/AuthorizationTypes"
+title = "Authorization Types"
+description = "View or modify list of Authorization Types"
+
+[ "Diagnosis Status Values Table" ]
+
+type = "setting"
+source = "EPART/ValidCodeTables/DiagnosisStatusValues"
+title = "Diagnosis Status Values"
+description = "View or modify list of Diagnosis Status Values"
+
+[ "Health Status Values Table" ]
+
+type = "setting"
+source = "EPART/ValidCodeTables/HealthStatusValues"
+title = "Health Status Values"
+description = "View or modify list of Health Status Values"
+

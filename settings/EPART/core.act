@@ -1,0 +1,40 @@
+; Smart Activities related to Core Tables
+
+activityListHeading = "Choose a table:"
+
+activity[] = "Core Heading"
+activity[] = "Person Table"
+activity[] = "Village Table"
+activity[] = "VV Code Tables"
+
+
+[horizRule]
+
+type = "separator"
+
+[Core Heading]
+
+type = "comment"
+comment = "### Core Tables ###"
+
+[Person Table]
+
+type = "setting"
+source = "EPART/Person"
+title = "Person File"
+description = "Person records"
+
+[Village Table]
+
+type = "setting"
+source = "EPART/Village"
+title = "Village File"
+description = "Location information for villages or city neighborhoods"
+
+[VV Code Tables]
+
+type = "activityList"
+source = "EPART/ValidCodeTables/index.act"
+title = "Valid Code Tables"
+description = "View or modify tables of valid code values"
+
